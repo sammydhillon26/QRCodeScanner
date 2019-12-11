@@ -175,7 +175,17 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
             
             if metadataObj.stringValue != nil {
                 messageLabel.text = metadataObj.stringValue
-
+                let input = metadataObj.stringValue!
+                let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+                let matches = detector.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
+                if !matches.isEmpty{
+                    for match in matches {
+                        guard let range = Range(match.range, in: input) else { continue }
+                        let url = input[range]
+                        print(url)
+                        launchApp(decodedURL: String(url))
+                    }
+                }
             }
         }
     }
