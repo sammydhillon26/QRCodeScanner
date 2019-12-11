@@ -175,6 +175,10 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
             
             if metadataObj.stringValue != nil {
                 messageLabel.text = metadataObj.stringValue
+                if !recentHistoryArray.contains(metadataObj.stringValue!){
+                    recentHistoryArray.insert(metadataObj.stringValue!, at: 1)
+                }
+                defaults.set(recentHistoryArray, forKey: recentHistoryKey)
                 let input = metadataObj.stringValue!
                 let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
                 let matches = detector.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
@@ -186,6 +190,7 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                         launchApp(decodedURL: String(url))
                     }
                 }
+
             }
         }
     }

@@ -12,7 +12,11 @@ class QRCodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        if let history = defaults.array(forKey: recentHistoryKey) {
+            recentHistoryArray = history as! [String]
+        } else {
+            defaults.set(recentHistoryArray, forKey: recentHistoryKey)
+        }
         // Do any additional setup after loading the view.
     }
 

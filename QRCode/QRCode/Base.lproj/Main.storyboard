@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +11,7 @@
         <!--Code View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="QRCodeViewController" customModule="QRCode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QRCodeViewController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +38,7 @@
                                 <color key="textColor" red="0.99215686270000003" green="0.81568627449999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYo-rY-gyl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYo-rY-gyl">
                                 <rect key="frame" x="210" y="20" width="150" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Cdn-qH-BGr"/>
@@ -48,6 +49,7 @@
                                 <state key="normal" title="Recent History"/>
                                 <connections>
                                     <action selector="onHistoryClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4wL-z0-vaQ"/>
+                                    <segue destination="FgO-4m-Qbj" kind="show" id="vwh-9n-O2y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,7 +78,7 @@
         <!--Scanner Controller-->
         <scene sceneID="6su-PY-OE1">
             <objects>
-                <viewController id="B0K-bi-dGX" customClass="QRScannerController" customModule="QRCode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="B0K-bi-dGX" customClass="QRScannerController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xpT-9d-mEX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,6 +145,39 @@
                 <exit id="L9X-1P-o6Q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="973.60000000000002" y="133.5832083958021"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="srr-2p-RJB">
+            <objects>
+                <viewController id="FgO-4m-Qbj" customClass="HistoryViewController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u1g-O1-7DI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="89n-3L-jNE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="89n-3L-jNE" firstAttribute="leading" secondItem="fbA-HV-J72" secondAttribute="leading" id="G9Y-DD-aJD"/>
+                            <constraint firstItem="89n-3L-jNE" firstAttribute="centerX" secondItem="fbA-HV-J72" secondAttribute="centerX" id="Qdl-Qa-WyF"/>
+                            <constraint firstItem="89n-3L-jNE" firstAttribute="centerY" secondItem="fbA-HV-J72" secondAttribute="centerY" id="cZP-B7-mUQ"/>
+                            <constraint firstItem="fbA-HV-J72" firstAttribute="bottom" secondItem="89n-3L-jNE" secondAttribute="bottom" id="pOl-L4-1hV"/>
+                            <constraint firstItem="89n-3L-jNE" firstAttribute="top" secondItem="fbA-HV-J72" secondAttribute="top" id="uNV-zM-Ma8"/>
+                            <constraint firstItem="fbA-HV-J72" firstAttribute="trailing" secondItem="89n-3L-jNE" secondAttribute="trailing" id="vGF-cj-F0F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fbA-HV-J72"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ouW-7T-jor"/>
+                    <connections>
+                        <outlet property="tableView" destination="89n-3L-jNE" id="4Eh-4D-vtF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKV-SP-4P5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349.60000000000002" y="-564.46776611694156"/>
         </scene>
     </scenes>
     <resources>

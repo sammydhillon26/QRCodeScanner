@@ -16,6 +16,7 @@
 		21070B0F23A16E4500A49A9F /* QRCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21070B0E23A16E4500A49A9F /* QRCodeUITests.swift */; };
 		21070B2223A1747100A49A9F /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21070B2023A1747100A49A9F /* QRScannerController.swift */; };
 		21070B2323A1747100A49A9F /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21070B2123A1747100A49A9F /* QRCodeViewController.swift */; };
+		21070B2523A1771C00A49A9F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21070B2423A1771C00A49A9F /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		21070B1023A16E4500A49A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21070B2023A1747100A49A9F /* QRScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
 		21070B2123A1747100A49A9F /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		21070B2423A1771C00A49A9F /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		21070AEB23A16E4300A49A9F /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
+				21070B2423A1771C00A49A9F /* HistoryViewController.swift */,
 				21070B2123A1747100A49A9F /* QRCodeViewController.swift */,
 				21070B2023A1747100A49A9F /* QRScannerController.swift */,
 				21070AEC23A16E4300A49A9F /* AppDelegate.swift */,
@@ -265,6 +268,7 @@
 				21070B2223A1747100A49A9F /* QRScannerController.swift in Sources */,
 				21070AED23A16E4300A49A9F /* AppDelegate.swift in Sources */,
 				21070AEF23A16E4300A49A9F /* SceneDelegate.swift in Sources */,
+				21070B2523A1771C00A49A9F /* HistoryViewController.swift in Sources */,
 				21070B2323A1747100A49A9F /* QRCodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
